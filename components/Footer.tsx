@@ -14,7 +14,7 @@ export default function Footer({ Page, pageProps }: { Page: ComponentType<any> &
 
     const editUrl = useMemo(() => {
         const md = routePath === '/' ? '/index.md' : routePath + '.md'
-        return 'https://github.com/brimworks/somaeastside.org/edit/master/pages' + md
+        return 'https://github.com/brimworks/somaeastside.org/edit/main/pages' + md
     }, [routePath])
 
     return (
