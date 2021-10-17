@@ -6,4 +6,4 @@ authors:
 
 # Welcome
 
-Some text
+Issue a pull request to edit this website.
