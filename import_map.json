@@ -7,7 +7,6 @@
     "react": "https://esm.sh/react@17.0.2",
     "react-dom": "https://esm.sh/react-dom@17.0.2",
     "~/": "./",
-    "equal": "https://deno.land/x/equal@v1.5.0/mod.ts",
     "marked": "https://esm.sh/marked@2.0.1",
     "highlight": "https://esm.sh/highlight.js@10.7.1/lib/core",
     "highlight-languages/": "https://esm.sh/highlight.js@10.7.1/lib/languages/",

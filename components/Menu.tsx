@@ -1,6 +1,17 @@
 import React from 'react'
 import { Navigation } from './Navigation.tsx'
-import { equal } from "equal"
+
+function arrayEqual(a, b) {
+    if (a.length !== b.length) {
+        return false;
+    }
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] != b[i]) {
+            return false;
+        }
+    }
+    return true;
+}
 
 export default function Menu({menuPath, setMenuPath, navigation, path}: {
     navigation?: Navigation[],
@@ -14,7 +25,7 @@ export default function Menu({menuPath, setMenuPath, navigation, path}: {
     const relevantMenuPath = menuPath.slice(0, path.length + 1);
     return navigation.map((item, index) => {
         const itemPath = [...path, index]
-        const display = equal(relevantMenuPath, itemPath) ? 'flex' : 'none';
+        const display = arrayEqual(relevantMenuPath, itemPath) ? 'flex' : 'none';
 
         return (
             <div key={index} style={{padding: "10px", position: "relative"}} onMouseEnter={setMenuPath.bind(null, itemPath)} onMouseLeave={setMenuPath.bind(null, path)}>
