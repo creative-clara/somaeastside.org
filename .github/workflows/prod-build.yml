@@ -1,5 +1,6 @@
 name: Production Build
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -14,10 +15,11 @@ jobs:
         $HOME/.deno/bin/deno run -A https://deno.land/x/aleph@v0.3.0-beta.19/install.ts
     - name: Build
       run: |
-        $HOME/.deno/bin/aleph build .
+        export PATH=$HOME/.deno/bin:$PATH
+        aleph build .
     - name: Deploy
       run: |
-        aws s3 sync ./dist s3://soma.brimworks.com
+        aws s3 --region "$AWS_DEFAULT_REGION" sync ./dist s3://soma.brimworks.com
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

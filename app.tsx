@@ -20,9 +20,6 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any> & { 
         <div style={{height: "100%"}}>
             <head>
                 <title>{title}</title>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-                <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet" />
             </head>
             <Header title={title} />
             <div style={{display:"flex", width:"100%", alignItems:"center", padding: "10px"}}>
