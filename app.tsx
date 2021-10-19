@@ -20,6 +20,7 @@ export default function App({ Page, pageProps }: { Page: ComponentType<any> & { 
         <div style={{height: "100%"}}>
             <head>
                 <title>{title}</title>
+                <meta name="viewport" content="width=605, initial-scale=1.0"></meta>
             </head>
             <Header title={title} />
             <div style={{display:"flex", width:"100%", alignItems:"center", padding: "10px"}}>
